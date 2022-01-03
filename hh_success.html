@@ -1,0 +1,878 @@
+
+
+
+
+    
+    
+    
+        
+    
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru" ng-app="kopilkaApp">
+<head>
+
+    <meta name="viewport" content="width=1200px">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="apple-itunes-app" content="app-id=911643588">
+    <meta name="author" content="Pavel K <cv@pavel-k.net>">
+
+    <meta property="og:title" content="Программа выгод Копилка"/>
+    <meta property="og:description" content="Экономьте с умом"/>
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content= "https://kopilkaclub.ru" />
+
+    
+    
+
+    <link rel="icon" href="/favicon.ico">
+            <title>Программа выгод «Копилка»</title>
+    
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600,300italic,400italic,600italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/south-street/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <link href="/css/custom.css?26" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/css/common.css?12" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <script src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/swithSiteVersion.js"></script>
+    <script src="/js/fail_safe_img.js?2"></script>
+
+    
+     <script>
+         var isAdaptive = true;     //выключаем режим адаптивности
+         var OnSmallDevice = false; //переменные для адаптивности все равно нужно задать
+         var OnMediumDevice = false; //чтобы не было ошибок в JScript
+     </script>
+    
+    
+    <script src="/js/jquery.maskedinput.min.js"></script>
+    <script src="/js/handlebars-v1.3.0.js"></script>
+    <script src="/js/typeahead.bundle.min.js"></script>
+    <script src="/js/ModalBox.js"></script>
+    <script src="/js/ems.js"></script>
+    <script src="/js/AuthBox.js"></script>
+    <!-- страшный файлик functions.js с кучей **оптимально написанного**  кода -->
+    <script src="/js/functions.js?122"></script>
+    <script src="/js/format.js"></script>
+    <script src="/js/mask.js"></script>
+    <script src="/js/special.js?109"></script>
+    <script src="/js/pay.js?1"></script>
+    <script src="/js/jquery.pickmeup.min.js"></script>
+    <script src="/js/jquery.pickmeup.twitter-bootstrap.min.js"></script>
+
+    <script src="/js/reCaptcha.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfuPb4UAAAAAEaQuvJhJKHPO2lVobX2C-e6FLEO"></script>
+
+        <style>
+        .home-container .container.content-container{
+                          margin-top:2em; /* отступ сверху*/
+                        background: #fff;
+        }
+
+        
+
+        
+        
+        
+            </style>
+
+
+    <script>
+        $(function() {
+            //перегружать страницу при смене региона
+            HEADER_CITY_SELECTOR.Reload_after_city_change = true;
+        });
+    </script>
+
+    
+    
+<style>
+
+    /* в Командоре не отображаем классы только для самберей, раздва и тд.*/
+    body.komandor  .sambery-only {
+        display:none !important;
+    }
+    body.komandor  .razdwa-only {
+        display:none !important;
+    }
+    body.komandor  .not-komandor {
+        display:none !important;
+    }
+
+    /*  САМБЕРИ  */
+    body.sambery  .komandor-only {
+        display:none !important;
+    }
+    body.sambery  .razdwa-only {
+        display:none !important;
+    }
+    body.sambery  .not-sambery {
+        display:none !important;
+    }
+
+    /*  РАЗ ДВА  */
+    body.razdwa  .komandor-only {
+        display:none !important;
+    }
+    body.razdwa  .sambery-only {
+        display:none !important;
+    }
+    body.razdwa  .not-razdwa {
+        display:none !important;
+    }
+
+    /* показываем элементы .some-regions-only только в отдельных регионах */
+        body.region24 .some-regions-only:not(.region24) {
+        display:none !important;
+    }
+       body.region19 .some-regions-only:not(.region19) {
+        display:none !important;
+    }
+       body.region38 .some-regions-only:not(.region38) {
+        display:none !important;
+    }
+       body.region17 .some-regions-only:not(.region17) {
+        display:none !important;
+    }
+   </style>
+
+</head>
+
+
+<body class="desktop-version no-padding region24 komandor
+                                                                  " >
+
+
+  
+      <div id="main-header">
+    <div class="container no-padding">
+        <div class="row">
+            <div class=" header-logo">
+                <a href="/">
+
+                                            <!-- логотип на новый год-->
+                        <img src="/img/logo_ny.png" width="183" height="48">
+                    
+                </a>
+            <span class="region komandor-only">Красноярский Край</span>
+            <a class="region sambery-only" href="/partners/#24">Красноярский Край</a>
+            <a class="region razdwa-only" href="/partners/#26">Красноярский Край</a>
+
+            </div>
+
+            <div class="main-header-column">
+              <div style="display:inline-block">
+                     <div class="text-right choose-region-column">
+                                    <div class="choose-region"> <span class="choose-region-label"> Регион&nbsp;</span>
+                                        <div class="btn-group region-selector combo-box header-popover"  data-toggle="tooltip" data-placement="bottom" title="Чтобы акции отображались корректно, выберите свой регион.<br>Это поможет сэкономить еще больше!" >
+                                            <a class="dropdown-toggle region-selector-link" data-toggle="dropdown" onclick="onRegionSelectShow()">
+                                                <span class="current-region">Красноярск</span> <span class="caret caret-custom"></span>
+                                            </a>
+
+                                            <ul class="dropdown-menu region-selector" role="menu">
+                                                                                              <li>
+                                                  <a  href="javascript:void(0);" data-region-id="24" onclick="HEADER_CITY_SELECTOR.ChangeCurrentRegion(this);">
+                                                      Красноярский Край
+                                                  </a>
+                                                </li>
+                                                                                              <li>
+                                                  <a  href="javascript:void(0);" data-region-id="19" onclick="HEADER_CITY_SELECTOR.ChangeCurrentRegion(this);">
+                                                      Республика Хакасия
+                                                  </a>
+                                                </li>
+                                                                                              <li>
+                                                  <a  href="javascript:void(0);" data-region-id="38" onclick="HEADER_CITY_SELECTOR.ChangeCurrentRegion(this);">
+                                                      Иркутская Область
+                                                  </a>
+                                                </li>
+                                                                                              <li>
+                                                  <a  href="javascript:void(0);" data-region-id="17" onclick="HEADER_CITY_SELECTOR.ChangeCurrentRegion(this);">
+                                                      Республика Тыва
+                                                  </a>
+                                                </li>
+                                                                                         </ul>
+                                        </div>
+                                    </div>
+                            
+                        </div>
+                     <div class="tech-support-column">
+                            <div class="choose-city"> <span class="tech-sup-label">Служба&nbsp;поддержки:&nbsp;</span>
+                                <div class="btn-group city-selector combo-box" >
+                                    <a class="dropdown-toggle city-selector-link " data-toggle="dropdown">
+                                        <span class="current-city">Красноярск</span> <span class="caret caret-custom"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                         <!-- заполняет JScript -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fs-2em city-phone"> <span class="code">8 (391)</span><span class="strong">274&ndash;50&ndash;50</span></div>
+                            <div class="local-links">
+                                
+                                
+                                 <span class="glyphicon glyphicon-time"> </span><a class="operation-time-popover local-link header-popover"  data-toggle="tooltip" data-placement="bottom" title="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;9.00&nbsp;до&nbsp;20.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;19.00.">Режим работы</a>
+                            </div>
+                        </div>
+
+              </div>
+            </div>
+            <div class="register-info-column not-authorized">
+                <table width="100%">
+                    <tr>
+                        <td width="60">
+                            <div class="profile-photo-sm ">
+                                                                    
+                                                            </div>
+                        </td>
+                        <td>
+                                                            <img class="border" src="/img/border.png">
+                                <div class="login-container" >
+                                 <span class="profile-img glyphicon glyphicon-user"></span>
+                                    <span class="text">Личный кабинет</span>
+                                    <a class="login-link sign-in-link"  href="#" >Войти</a>
+
+                                <div class="no-wrap">
+                                    
+                                    <a class="register-link local-link komandor-only"  href="/account/logout">Регистрация</a>
+                                </div>
+                                </div>
+                                                    </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        
+
+        <div class="row">
+            <a class="sambery-only" href="/partners/#24">
+                <img style="margin: 0px 0px 0px 15px" src="/img/SamBeri_small_logo.jpg" height="45">
+            </a>
+            <a class="razdwa-only" href="/partners/#26">
+                <img style="margin: 0px 0px 0px 15px" src="/img/RazDva_small_logo.jpg" height="45">
+            </a>
+        </div>
+
+        <div class="navigation" style="border-bottom: 0; margin-bottom: 0;">
+            <nav class="navbar" style="border:none">
+                <ul class="nav navbar-nav" style="width: 720px;">
+
+                    <li><a href="/specials">Акции</a></li>
+                    
+
+                    <li class="komandor-only"><a href="/bonuses">Бонусы</a></li>
+
+                    <li><a href="/faq">Вопрос-Ответ</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="padding-right: 5px;margin-left:0;">
+                    <li><a class="block-card-btn" href="#" style="margin-left:0;border:none"><img src="/img/icon_lock.png" width="7" height="9" style="margin: 0 5px 1px 0;"> Заблокировать карту</a></li>
+                    <li><a href="/register/card" style="margin-left:20px;border:none"><img src="/img/icon_star6.png" width="10" height="10" style="margin: 0 5px 1px 0;"> Активировать карту</a></li>
+                </ul>
+            </nav>
+            <!-- Оставлю так в память о короновирусе:)
+                            <div style="text-align: center; font-size: large; color: red"><b>До 14 июня 2020 года служба поддержки работает с 9:00 до 18:00.</b></div>
+                        -->
+        </div>
+    </div>
+</div>
+
+<div style="display:none" id="header-data">
+    <ul class="dropdown-menu city-selector" role="menu">
+        <li class="city-desc" data-city-region="NO_CITIES_IN_REGION" data-city-id="no-region-city"
+                              data-city-code=""  data-city-tel="нет офиса"
+                              data-city-name="Нет офиса" data-city-workday="нет офиса">
+            Нет офисов
+        </li>
+
+                    <li data-city-region="24">
+                  <a class="city-desc" data-city-id="831"
+                      data-city-code="8&nbsp;(800)"  data-city-tel="350&ndash;50&ndash;00"
+                      data-city-region="24"
+                      data-city-name="Красноярск" data-region-name="Красноярский Край"
+                     data-city-workday="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;8.00&nbsp;до&nbsp;21.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;21.00."
+                     href="javascript:void(0);" onclick = "HEADER_CITY_SELECTOR.ChangeCurrentCity(this);"
+                   >
+                      Красноярск
+                  </a>
+            </li>
+                    <li data-city-region="24">
+                  <a class="city-desc" data-city-id="1614"
+                      data-city-code="8&nbsp;(800)"  data-city-tel="350&ndash;50&ndash;00"
+                      data-city-region="24"
+                      data-city-name="Ачинск" data-region-name="Красноярский Край"
+                     data-city-workday="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;8.00&nbsp;до&nbsp;21.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;21.00."
+                     href="javascript:void(0);" onclick = "HEADER_CITY_SELECTOR.ChangeCurrentCity(this);"
+                   >
+                      Ачинск
+                  </a>
+            </li>
+                    <li data-city-region="19">
+                  <a class="city-desc" data-city-id="8"
+                      data-city-code="8&nbsp;(800)"  data-city-tel="350&ndash;50&ndash;00"
+                      data-city-region="19"
+                      data-city-name="Абакан" data-region-name="Республика Хакасия"
+                     data-city-workday="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;8.00&nbsp;до&nbsp;21.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;21.00."
+                     href="javascript:void(0);" onclick = "HEADER_CITY_SELECTOR.ChangeCurrentCity(this);"
+                   >
+                      Абакан
+                  </a>
+            </li>
+                    <li data-city-region="38">
+                  <a class="city-desc" data-city-id="34286"
+                      data-city-code="8&nbsp;(800)"  data-city-tel="350&ndash;50&ndash;00"
+                      data-city-region="38"
+                      data-city-name="Ангарск" data-region-name="Иркутская Область"
+                     data-city-workday="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;8.00&nbsp;до&nbsp;21.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;21.00."
+                     href="javascript:void(0);" onclick = "HEADER_CITY_SELECTOR.ChangeCurrentCity(this);"
+                   >
+                      Ангарск
+                  </a>
+            </li>
+                    <li data-city-region="38">
+                  <a class="city-desc" data-city-id="269960"
+                      data-city-code="8&nbsp;(800)"  data-city-tel="350&ndash;50&ndash;00"
+                      data-city-region="38"
+                      data-city-name="Иркутск" data-region-name="Иркутская Область"
+                     data-city-workday="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;8.00&nbsp;до&nbsp;21.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;21.00."
+                     href="javascript:void(0);" onclick = "HEADER_CITY_SELECTOR.ChangeCurrentCity(this);"
+                   >
+                      Иркутск
+                  </a>
+            </li>
+                    <li data-city-region="17">
+                  <a class="city-desc" data-city-id="344995"
+                      data-city-code="8&nbsp;(800)"  data-city-tel="350&ndash;50&ndash;00"
+                      data-city-region="17"
+                      data-city-name="Кызыл" data-region-name="Республика Тыва"
+                     data-city-workday="В&nbsp;будние&nbsp;дни&nbsp;с&nbsp;8.00&nbsp;до&nbsp;21.00,<br>В&nbsp;выходные&nbsp;с&nbsp;10.00&nbsp;до&nbsp;21.00."
+                     href="javascript:void(0);" onclick = "HEADER_CITY_SELECTOR.ChangeCurrentCity(this);"
+                   >
+                      Кызыл
+                  </a>
+            </li>
+            </ul>
+
+</div>
+
+
+<!-- CITY SELECTOR -->
+<script src="/js/header_city_selector.js?2"></script>
+<script>
+    function onRegionSelectShow()
+    {
+        //чтобы подсказка по выбору региона не перекрывала список регионов
+        $('.region-selector.header-popover').tooltip('destroy');
+
+        //$(".dropdown-toggle.region-selector-link").dropdown('toggle');
+        $(".region-selector.header-popover").on("hidden.bs.dropdown", function(event){
+            //как только  комбо-бокс спрятали,  создадим подсказку заново
+            //alert('2');
+            $('.region-selector.header-popover').tooltip({ html:true});
+        });
+
+
+    }
+
+    $(function() { //при загрузке страницы устанавливаем текущий город
+        HEADER_CITY_SELECTOR.DisplayRegionChange("24");
+        HEADER_CITY_SELECTOR.SetCurrentCity("831" );
+            });
+
+
+</script>
+
+  
+
+  
+    
+    <div class="home-container">
+       <div class="home-slider">
+            
+            
+            
+
+            <div class="container padding-aware" >
+                <p style="font-size: 2em;">Экономьте с умом</p>
+
+                <div class="clearfix" style="height: 10px;"></div>
+
+                <p>Копилка &mdash; это программа выгод, которая позволяет экономить на покупках
+                    <span class="komandor-only"> в сети супермаркетов Командор, гипермаркетов Аллея и у других партнеров программы.</span>
+                    <span class="sambery-only">в сети гипермаркетов Самбери и у других партнеров программы.</span>
+                    <span class="razdwa-only">в сети минимаркетов Раз Два.</span>
+                </p>
+
+
+
+
+                <div class="clearfix" style="height: 10px;"></div>
+
+                <div class="row">
+                    <div class="pusher no-padding">
+                        <div style="line-height: 418px;" class="text-left"><a class="br-prev" onclick="return false;" href="#"><img src="/img/new/prev-arrow.png"></a></div>
+                    </div>
+
+
+
+
+                    <div class="banner-rotation-home banner-rotation no-padding" data-visible-items="3">
+                                                
+                                <!-- не надо ставить пробелы/пустые строки между элементами -->
+
+
+
+
+
+<!-- мобильное приложение добавлено 20.02.2019
+  ссылка /img/mobile/iosandroid.html нормально работет только на kopilkaclub.ru
+-->
+<div class="no-padding banner-rotation-item">
+    <div  class="home-slider-item">
+        <div class="home-slider-item-picture"><a href="/img/mobile/iosandroid.html"  ><img src="/img/home-banners/mob_app.jpg" ></a></div>
+        <div class="home-slider-item-info" >
+            <strong style="font-size:17px;" >Мобильное приложение Копилка</strong>
+            <p style=""> Участвуйте в акциях, узнавайте баланс,<br> пользуйтесь виртуальной картой</p>
+        </div>
+    </div>
+</div>
+
+<div class="no-padding banner-rotation-item">
+    <div  class="home-slider-item">
+        <div class="home-slider-item-picture"><a href="/special/birthday"  ><img src="/img/home-banners/birthday.jpg" ></a></div>
+        <div class="home-slider-item-info" >
+            <strong style="font-size:17px;" >Выгода для именинника</strong>
+            <p style=""> Накрой праздничный стол с Копилкой</p>
+        </div>
+    </div>
+</div>
+
+<!-- Персональные скидки добавлено 20.02.2019     -->
+<div class="no-padding banner-rotation-item">
+    <div  class="home-slider-item">
+        <div class="home-slider-item-picture"><a href="/individual_discounts"  ><img src="/img/home-banners/profit.jpg" ></a></div>
+        <div class="home-slider-item-info" >
+            <strong style=""> Персональные предложения</strong>
+            <p style="margin-top:5px;"> Экономьте больше<br> на покупке привычных товаров</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="no-padding banner-rotation-item">
+    <div  class="home-slider-item">
+        <div class="home-slider-item-picture"><a href="/special/pensioner"  ><img src="/img/home-banners/pens.jpg" ></a></div>
+        <div class="home-slider-item-info" >
+            <strong style=""> Пенсионный статус</strong>
+            <p style="margin-top:5px;"> Еще больше бонусов для старшего поколения</p>
+        </div>
+    </div>
+
+</div>
+
+
+                                        </div>
+
+
+                <div class="pusher no-padding">
+                        <div style="line-height: 418px;" class="text-right"><a class="br-next" onclick="return false;" href="#"><img src="/img/new/next-arrow.png"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-partners komandor-only">
+            <div class="container text-center">
+                <h1><a style="color: inherit" href="/partners">Наши партнеры</a></h1>
+                <p>Получайте скидки и используйте накопленные бонусы у партнеров программы.
+                    <br>Копите с умом и тратьте с удовольствием!
+                </p>
+
+                <table  class="partners-table">
+                    <tr>
+                                                                        
+                                                                        <td >
+                            <a  href="/partners/#1"
+                                                           >
+                           <img src="https://kopilkaclub.ru/img/partners/komandor.jpg" ></a>
+                        </td>
+                                                                          
+                                                                        <td >
+                            <a  href="/partners/#2"
+                                                           >
+                           <img src="https://kopilkaclub.ru/img/partners/alleya.jpg" ></a>
+                        </td>
+                                                                          
+                                                                        <td >
+                            <a  href="/partners/#25"
+                                                           >
+                           <img src="https://kopilkaclub.ru/img/partners/horoshiy.jpg" ></a>
+                        </td>
+                                                                          
+                                                                            
+                                                    
+                                                                            
+                                                    
+                                                                            
+                                                    
+                                                                            
+                                                    
+                                                                            
+                                                    
+                                                                            
+                                                    
+                                                                            
+                                                </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="home-information">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div>
+                            <div style="margin-bottom: 10px;"><img src="/img/icon_stats.png"></div>
+                            <h3>Статистика &laquo;Копилки&raquo;</h3>
+                        </div>
+                        <div>
+                            <strong class="text-muted">Участники:</strong>
+                            <div class="clearfix" style="height: 8px;"></div>
+
+                                                            <strong>Республика Хакасия</strong><br>
+                                <span style="font-weight: 300; font-size: 20px;">135 045</span>
+                                <div class="clearfix" style="height: 8px;"></div>
+                                                            <strong>Иркутская Область</strong><br>
+                                <span style="font-weight: 300; font-size: 20px;">125 754</span>
+                                <div class="clearfix" style="height: 8px;"></div>
+                                                            <strong>Красноярский Край</strong><br>
+                                <span style="font-weight: 300; font-size: 20px;">1 245 473</span>
+                                <div class="clearfix" style="height: 8px;"></div>
+                                                        
+                            <strong>Вступило сегодня</strong><br>
+                            <span style="font-weight: 300; font-size: 20px;">16</span>
+
+                            <div class="clearfix" style="height: 16px;"></div>
+
+                            <strong class="text-muted">Покупок с начала недели:</strong><br>
+                            <span style="font-weight: 300; font-size: 20px;">0</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div>
+                            <div style="margin-bottom: 10px;"><img src="/img/icon_digest.png"></div>
+                            <h3>Новости</h3>
+                        </div>
+                        <div style="text-align: justify">
+                            
+                                                            
+                                <p class="some-regions-only region24">Обновление информации о чеках и зачисление бонусах происходит в течение суток после совершения покупки.</p>
+
+                                    
+                            
+                            <p class="razdwa-only">В настоящее время программа работает в минимаркете по ул. Калинина 10, Стрельникова 16 а и Павла Морозова 94 в. В дальнейшем программа начнет действовать и в других минимаркетах сети.</p>
+
+                            
+                            <p>Уважаемые пользователи карт Копилка! Если у вас не работает приложение Копилка на устройствах Android, просим вас обновить приложение в <a href="https://play.google.com/store/apps/details?id=ru.kopilkaclub.discount">Play Маркет</a>.</p>
+
+                            <p class="komandor-only">Карта «Копилка» теперь работает во всех дискаунтерах «Хороший»<br>
+
+                                Для посетителей магазинов действуют персональные предложения, привычные скидки, а так же акции, разработанные специально для дискаунтеров «Хороший»:<br>
+                                ОПТОВАЯ ПОКУПКА - снижение цены по карте «Копилка» за приобретение товара в большем количестве, при этом цена за штуку будет уменьшаться.<br>
+                                РАСПРОДАЖА - фиксированная и очень выгодная цена по карте «Копилка» на разные группы товаров.<br>
+                                ТОВАРЫ БРЕНДЫ – специальные цены по карте «Копилка» на любимые бренды.<br>
+
+                                Напомним, что в обычный набор выгодных предложений от карты «Копилка», которые работают во всех магазинах «Аллея», «Командор» и «Хороший», входят «Любимый товар», «Персональные предложения», «Подарок в День рождения», «Желтый ценник», «Скидка пенсионерам» и «Фишечные акции».<br>
+                                Добро пожаловать за покупками! </p>
+
+                            
+                            
+
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div>
+                            <div style="margin-bottom: 10px;"><img src="/img/icon_community.png"></div>
+                            <h3>Сообщество</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <!-- VK Widget -->
+                                <div id="vk_groups"></div>
+                            </div>
+                            <div class="col-xs-6">
+                                <!-- Facebook Widget -->
+                                <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fkopilkaclub&amp;width=263&amp;height=254&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=1387806261498520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:263px; height:254px;" allowTransparency="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                    <div class="chat-bot-overlay">
+                        <div class="row">
+                            <div class="col-xs-3"></div>
+                            <div class="col-xs-9 image-container">
+                                <a href=" https://vk.me/kopilkaclub" target="_blank">
+                                  <img class="" src="/img/bot_banner_desktop.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="home-mobile-app">
+            <div class="container text-center">
+                <div class="clearfix" style="height: 10px;"></div>
+
+                <img src="/img/new/mobile-icon.png">
+
+                <div class="clearfix" style="height: 10px;"></div>
+
+                <p style="font-size: 1.4em;">«Копилка» станет ближе вместе с нашим мобильным приложением</p>
+                <p>Узнавайте о балансе карты, бронируйте товары акции «Любимый товар», пользуйтесь «Персональными скидками»! <br>Все это доступно с нашим приложением.</p>
+
+                <div class="clearfix" style="height: 20px;"></div>
+
+                <div class="row">
+                    <div class="col-xs-6 text-right"><a href="https://play.google.com/store/apps/details?id=ru.kopilkaclub.discount" target="_blank"><img src="/img/new/google-app-download.png"></a></div>
+                    <div class="col-xs-6 text-left"><a href="https://itunes.apple.com/ru/app/mobil-naa-kopilka/id911643588" target="_blank"><img src="/img/new/apple-app-download.png"></a></div>
+                </div>
+            </div>
+        </div>
+
+
+ 
+
+  
+      <div class="home-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3" style="width: 33%">
+                <strong>Пользователям</strong>
+
+                <a href="/rules.html">Договор оферты</a><br>
+                <a href="/faq" class="komandor-only">Вопрос-ответ</a><br class="komandor-only">
+
+                
+                
+                <br>
+                <a class="komandor-only" href="/giftcard"><span class="khi khi-giftcard"></span> Подарочная карта</a><br>
+                <a class="block-card-btn" href="#"><span class="khi khi-blockcard"></span> Заблокировать карту</a><br>
+                <a href="/register/card"><span class="khi khi-registercard"></span> Активировать карту</a><br><br>
+
+                <div style="color: #fff;"><a class="green-link sign-in-link" data-auth-box-position="top" href="#">Вход</a> <span style="font-weight: 700;">&middot;</span> <a class="green-link register-link" href="#">Регистрация</a></div><br>                <a href="#" onclick="SwitchToMobileVersion();return false;"> Мобильная версия сайта</a>
+            </div>
+
+            <div class="col-xs-3" style="width: 33%">
+                <strong>Акции</strong>
+                <!-- <a class="komandor-only" href="/special/#/">Мегаскидки</a><br class="komandor-only" > -->
+                <!-- <a class="komandor-only" href="/special/#/maminakopilka">Мамина копилка</a><br class="komandor-only" > -->
+
+                <a class="komandor-only" href="/special/#/discountpaper">Желтый ценник</a><br class="komandor-only" >
+                <a href="/individual_discounts">Персональные предложения</a><br>
+                                    <a class="not-razdwa" href="/special/lovely_goods">Любимый товар</a><br class="not-razdwa">
+                
+                <a class="komandor-only" href="/special/birthday">Скидка в день рождения</a><br class="komandor-only" >
+
+                <a class="sambery-only" href="/special/discountPaper">Каталог скидок</a><br class="sambery-only" >
+                <a class="sambery-only" href="/special/#/catch_moment">Лови Момент</a><br class="sambery-only" >
+
+
+                <a class="razdwa-only" href="/special/discountPaper">Покупки с картой</a><br class="razdwa-only" >
+            </div>
+
+            <div class="col-xs-3" style="width: 33%">
+                <strong>Служба поддержки</strong>
+
+                <div class="city-tech-supp">
+                    <p>
+                                                     
+                                                           <span class="tech-sup-city"
+                              data-city-id="831"> Красноярск : 8 (800) 350&ndash;50&ndash;00</span><br>
+                                                     
+                                                           <span class="tech-sup-city"
+                              data-city-id="1614"> Ачинск : 8 (800) 350&ndash;50&ndash;00</span><br>
+                                                     
+                                                           
+                                                           
+                                                           
+                                                      <a class="local-link" style="border:none" href="mailto:customer@sm-komandor.ru">customer@sm-komandor.ru</a>
+                    </p>
+                </div>
+                <div class="city-tech-supp">
+                    <p>
+                        <span class="text-muted">Режим работы:</span><br>
+                        <span class="footer-working-time">В будние дни &mdash; с 9.00 до 20.00<br>В выходные &mdash; с 10.00 до 19.00</span>
+                    </p>
+                </div>
+
+                <!--<div><a href="#" class="local-link main-request-callback" style="top:3px;display:inline-block;position:relative; ">Заказать&nbsp;обратный&nbsp;звонок</a></div>
+                -->
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="home-copyright">
+    <img src="/img/new/kopilka-copyright-logo.png">
+    <div class="clearfix" style="height: 6px;"></div>
+    <br>2009 &mdash; 2021 &copy; &laquo;Копилка&raquo;
+</div>
+
+
+  
+
+
+  
+    
+    <div class="modal fade" id="wndModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="modalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="auth-form-div" style="display: none;">
+        <div>
+            <div class="reg-errors"></div>
+            <form id="platAuthForm" class="auth-form platAuthForm" action="/account/login" method="post">
+                <input type="hidden" name="token" id="token">
+                <input type="hidden" name="action" id="action">
+
+                <input type="text" name="card_no" class="form-control phone-mask" placeholder="Номер телефона">
+                <div class="clearfix" style="height: 6px;"></div>
+                <input type="password" name="pin" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Пароль'" placeholder="Пароль">
+                <div class="clearfix" style="height: 6px;"></div>
+                <div class="row no-margin">
+                    <div class="col-xs-4 no-padding">
+                        <button class="btn btn-success" type="submit">Войти</button><span style="display: none; line-height: 32px; width: 32px;" class="ajax-loading-indicator pull-right text-center"><img src="/img/ajax-loader.gif"></span>
+                    </div>
+                    <div class="col-xs-8 no-padding text-right">
+                        <a class="password-reset-link local-link" style="line-height: 32px; white-space: nowrap;" href="#">Забыли пароль?</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://oauth.vk.com/authorize?client_id=4550929&scope=2&response_type=code&v=5.24&redirect_uri=https://kopilkaclub.ru/register/social/signin/" class="btn btn-primary btn-block" style="color: #fff;">Войти через ВКонтакте</a>
+                </div>
+            </form>
+            <script>
+                updateReCaptchaToken('token', 'action', 'login');
+            </script>
+        </div>
+    </div>
+
+    
+
+    
+        <script> /* счетчик для google analytics */
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-11113415-1', 'kopilkaclub.ru');
+            ga('send', 'pageview');
+
+        </script>
+
+        <!-- refreshed 18.05.2017 hewston-->
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter24612692 = new Ya.Metrika({
+                            id:24612692,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true,
+                            trackHash:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                        s = d.createElement("script"),
+                        f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/24612692" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=BMCEW8WLAR81fhWa1skzh6o/XFRgNDTQ3YLsvSen5M3fh7RN7niTFBSG32wFR3sRWAZx/03yYT4cqi2U2vPpU/Yw8glKwZRsd2mFa1jzNns2DpMcSQTUI*sIqoMUUf6MBdDDXmZ4kHd6FIsULSh/OReU3BWqLYCYbB7/aMhxm8Y-';</script>
+    
+    
+
+    
+            <script>
+            if($('#vk_groups').length) {
+                window.vkAsyncInit = function () {
+                    VK.Widgets.Group("vk_groups", {mode: 0, width: "263", height: "254", color1: 'FFFFFF', color2: '49734b', color3: '76c153'}, 58861399);
+                };
+
+                (function(a, c, f) {
+                    function g() { var d, a = c.getElementsByTagName(f)[0], b = function(b, e) { c.getElementById(e) || (d = c.createElement(f), d.src = b, d.async = !0, e && (d.id = e), a.parentNode.insertBefore(d, a)) };
+                        b("//vk.com/js/api/openapi.js");
+                    }
+                    a.addEventListener ? a.addEventListener("load", g, !1) : a.attachEvent && a.attachEvent("onload", g)
+                })(window, document, "script");
+            }
+        </script>
+    
+
+
+  
+      
+  
+    
+    <!-- вытащено из страшного файлика functions.js с кучей **оптимально написанного**  кода -->
+    <script src="/js/banner-rotation.js?1"></script>
+
+</body>
+</html>

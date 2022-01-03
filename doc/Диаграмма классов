@@ -1,0 +1,54 @@
+@startuml
+class API_Onlinesim
+{
+  str number, str id buy_number()
+  str cod, str passwor get_sms(id,count = 0, mod = 0)
+}
+class requests
+{
+}
+class webdriver
+{
+}
+class Kopilka_reg
+{
+  driver = webdriver.Firefox
+  api = API_Onlinesim.init
+  void reg()
+  str famaly_name,str name ,str otc get_person()
+  str get_key()
+  void last_name_btn(famaly_name)
+  void name_btn(name)
+  void otces_btn(otc)
+  void data_btn()
+  void phone_btn(phone)
+  void card_btn(card)
+  void secret_btn(key)
+  void iwant_sms_btn()
+  void iwant_email_btn()
+  void next_1_btn()
+  str area, str city get_area()
+  void area_btn(area)
+  void city_btn(city)
+  void street_btn()
+  void house_btn()
+  void next_2_btn()
+  void confirm_cod(confirmCode)
+  void next_3_btn()
+  void save_acc(number, passwor) 
+}
+class Kopilka_aut
+{
+  void enter_btn()
+  str login, str password get_data(number)
+  void login_btn()
+  void pass_btn()
+  void next_btn()
+  void aut()
+}
+
+API_Onlinesim -- Kopilka_reg: < использует
+webdriver -- Kopilka_aut: < использует
+webdriver -- Kopilka_reg: < использует
+requests -- API_Onlinesim: < использует
+@enduml
