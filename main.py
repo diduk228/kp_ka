@@ -9,91 +9,6 @@ import requests
 import re
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-# headers = {'Content-Type' : 'multipart/form-data; boundary=----WebKitFormBoundaryxjVevqFJn1yxdmHB'}
-# card = input ("Введите номер карты: ")
-# param = {
-#     'inp[ln]' : 'Пушин',
-#     'inp[fn]' : 'Егор',
-#     'inp[mn]' : 'Гудимов',
-#     'inp[sex]' : 'M',
-#     'inp[dob]' : '18.12.1995',
-#     'inp[phone]' : '+7 (967) 623–0795',
-#     'inp[email]' : 'hortorkne@vusra.com',
-#     'inp[card]' : card,
-#     'inp[secret]' : 'Дорога',
-#     'inp[iwant_sms]' : 'off',
-#     'inp[iwant_email]' : 'off',
-#     'inp[agree_rules]' : 'on',
-#     'inp[agree_pd]' : 'on',
-#     'pensioner_scan' : '(binary)',
-#     'inp[region_id]' : '268885',
-#     'inp[city_id]' : '268925',
-#     'inp[street_id]' : '272603',
-#     'inp[house]' : '31',
-#     'inp[dept]' : '',
-#     'inp[room]' : '',
-#     'inp[district]' : '0',
-#     'activate_card' : 'Продолжить'
-# }
-# kop = requests.post('https://kopilkaclub.ru/register/card', params=param, headers=headers)
-# f = open('xyz.html','w')
-# f.write(kop.text)
-# confir = input ("Введите число подтверждения: ")
-#
-# param = {
-#     'card' : card,
-#     'phone' : '+7 (967) 623–0795',
-#     'confirmCode' : confir,
-#     'activate_card' : 'Активировать карту'
-# }
-#
-# kop = requests.post('https://kopilkaclub.ru/register/card/confirm', params=param, headers=headers)
-# f.write(kop.text)
-# session = requests.Session()
-# # Параметры запроса
-# params = {
-#     'key': 'd0fffa4870c1487e98f044c0abe8523f',
-#     'method' : 'userrecaptcha',
-#     'version' : 'v3',
-#     'min_score' : '0.3',
-#     'googlekey' : '6LfuPb4UAAAAAEaQuvJhJKHPO2lVobX2C-e6FLEO',
-#     'pageurl' : 'https://kopilkaclub.ru/account/login'
-# }
-# #https://rucaptcha.com/in.php?key=d0fffa4870c1487e98f044c0abe8523f&method=userrecaptcha&version=v3&min_score=0.3&googlekey=6LfuPb4UAAAAAEaQuvJhJKHPO2lVobX2C-e6FLEO&pageurl=https://kopilkaclub.ru
-# url = 'https://rucaptcha.com/in.php?'
-# r = session.get(url, params=params)
-# r = r.text.replace('OK|', '')
-# print(r)
-#
-# time.sleep(8)
-# param2 = {
-#     'key' : 'd0fffa4870c1487e98f044c0abe8523f',
-#     'action' : 'get',
-#     'id' : r
-# }
-# r2 = requests.get('https://rucaptcha.com/res.php', params=param2)
-# r2 = r2.text.replace('OK|', '')
-# print(r2)
-# #https://rucaptcha.com/res.php?key=d0fffa4870c1487e98f044c0abe8523f&action=get&id=51111057194
-#
-# headers={
-#      'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
-#      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
-#      'Origin' : 'https://kopilkaclub.ru',
-#      'Referer' : 'https://kopilkaclub.ru/',
-#      'X-Requested-With' : 'XMLHttpRequest',
-# }
-# url = "https://kopilkaclub.ru/account/login"
-# param5={'token' : r2, 'action' : 'login', 'card_no' : '+7 (927) 239–7795', 'pin' : '9UIG', 'api' : '1'}
-# tok = 'token=' + r2 + '&action=login&card_no=%2B7+(927)+239%E2%80%937795&pin=9UIG&api=1'
-# #param5 = "&".join("%s=%s" % (k,v) for k,v in param5.items())
-# r = session.post(url , params=param5, headers=headers)
-# print(r.url)
-# print(r.history)
-# print(r.text)
-# r = session.get('https://kopilkaclub.ru/profile/dashboard')
-# with open("hh_success.html","w",encoding="utf-8") as f:
-#     f.write(r.text)
 def get_sms(id, count = 0, mod = 0):
     url1 = 'https://onlinesim.ru/api/getState.php?apikey=96ad76d72c908e689ce8712bc4b6fc2b'
     param = {
@@ -167,60 +82,6 @@ def get_inf_numbers_api():
     req = requests.post(url, params=settings, headers=head)
     print(req.text)
 
-def get_data(number):
-    file1 = open("sample.txt", "r")
-    count = 0
-    password = 'null'
-    login = 'null'
-    while True:
-        if(count == number):
-            count = count + 1
-            line = file1.readline()
-            if not line:
-                break
-            password = line[line.find(":") + 1:]
-            login = line.partition(':')[0]
-            print(line.strip())
-            continue
-        # считываем строку
-        buff = file1.readline()
-        # прерываем цикл, если строка пустая
-        count = count + 1
-        if not buff:
-            break
-        # выводим строку
-
-    # закрываем файл
-    file1.close
-    return login, password
-def aut():
-    ser = Service("/home/danil/PycharmProjects/Koplka/geckodriver")
-    op = webdriver.FirefoxOptions()
-    driver = webdriver.Firefox(executable_path="/home/danil/PycharmProjects/Koplka/geckodriver")
-    for number in range(28):
-        driver.get('https://kopilkaclub.ru/')
-        element = driver.find_element_by_link_text("Войти")
-        element.click()
-        login, password = get_data(number)
-        pageSource = driver.page_source
-        element = driver.find_element_by_xpath("//input[@name='card_no']");
-        element.send_keys(login)
-        element = driver.find_element_by_xpath("//input[@name='pin']");
-        element.send_keys(password)
-        button = driver.find_element_by_xpath("//button[@class='btn btn-success']");
-        button.click()
-        # try:
-        #     time.sleep(5)
-        #     button.click()
-        # except:
-        #     print('')
-        time.sleep(12)
-        try:
-            balance = driver.find_element_by_xpath("//span[@class='lk-card-balance']")
-            print(balance.text)
-        except:
-            print(str(number) + " Ошибка!")
-        driver.delete_all_cookies()
 
 def get_person():
     file1 = open("persons.txt", "r")
@@ -433,32 +294,77 @@ def reg(rep = 0, number = '', id = '', card = 0):
     reg()
     # try:
     #     succses = driver.find_element_by_xpath('/html/body/div[3]/div/div/div[1]/div/form/div[3]/div/p[1]')
+
+class Kopilka_aut:
+    def __init__(self):
+        self.driver = webdriver.Firefox(executable_path="/home/danil/PycharmProjects/Koplka/geckodriver")
+    def __del__(self):
+        self.driver.quit()
+
+    def enter_btn(self):
+        element = self.driver.find_element_by_link_text("Войти")
+        element.click()
+
+    def get_data(self, number):
+        file1 = open("sample.txt", "r")
+        count = 0
+        password = 'null'
+        login = 'null'
+        while True:
+            if (count == number):
+                count = count + 1
+                line = file1.readline()
+                if not line:
+                    break
+                password = line[line.find(":") + 1:]
+                login = line.partition(':')[0]
+                print(line.strip())
+                continue
+            # считываем строку
+            buff = file1.readline()
+            # прерываем цикл, если строка пустая
+            count = count + 1
+            if not buff:
+                break
+            # выводим строку
+
+        # закрываем файл
+        file1.close
+        return login, password
+    def login_btn(self, login):
+        element = self.driver.find_element_by_xpath("//input[@name='card_no']");
+        element.send_keys(login)
+    def passw_btn(self, password):
+        element = self.driver.find_element_by_xpath("//input[@name='pin']");
+        element.send_keys(password)
+    def next_btn(self):
+        button = self.driver.find_element_by_xpath("//button[@class='btn btn-success']");
+        button.click()
+    def get_balance(self, number):
+        try:
+            balance = self.driver.find_element_by_xpath("//span[@class='lk-card-balance']")
+            print(balance.text)
+        except:
+            print(str(number) + " Ошибка!")
+
+    def aut(self):
+        for number in range(28):
+            self.driver.get('https://kopilkaclub.ru/')
+            self.enter_btn()
+            login, password = self.get_data(number=number)
+            pageSource = self.driver.page_source
+            self.login_btn(login)
+            self.passw_btn(password)
+            self.next_btn()
+            time.sleep(12)
+            self.get_balance(number=number)
+            self.driver.delete_all_cookies()
+
 print('If you want to cheak accaunts, push 1\nIf you want to reg accaunt, push 0 ')
 mod = int(input())
 if(mod == 1):
-    aut()
+    start = Kopilka_aut()
+    start.aut()
 if(mod == 0):
     reg()
-# number,id = buy_number()
-# print(number + ' ' + id)
-# cod,passwor = get_sms(id,mod=0)
-# print(cod + ' ' + passwor)
-# cod,passwor = get_sms(id,mod=1)
-# print(cod + ' ' + passwor)
 
-
-
-
-
-
-# fileToWrite = open("page_source.html", "w")
-# fileToWrite.write(pageSource)
-# fileToWrite.close()
-#
-# with open("page_source.html", "r") as f:
-#     contents = f.read()
-#
-#     soup = BeautifulSoup(contents, 'lxml')
-#
-#     news = soup.find("input", attrs={ "type" : "hidden"}).get('value')
-#     print(news)
