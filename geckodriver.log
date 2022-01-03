@@ -11686,3 +11686,135 @@ JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreac
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
+1641214589661	geckodriver	INFO	Listening on 127.0.0.1:51991
+1641214590669	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileETK1Lq"
+1641214592667	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileETK1Lq/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 154: TypeError: date is undefined
+1641214595481	Marionette	INFO	Listening on port 37513
+1641214595542	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+1641214781627	Marionette	INFO	Stopped listening on port 37513
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 13765, IPC I/O Parent] WARNING: FileDescriptorSet destroyed with unconsumed descriptors: file /PROJECT/firefox-93.0+linuxmint1+uma/ipc/chromium/src/chrome/common/file_descriptor_set_posix.cc:19
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1641214825852	geckodriver	INFO	Listening on 127.0.0.1:34923
+1641214826857	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileIGq209"
+1641214828167	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileIGq209/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 154: TypeError: date is undefined
+1641214830208	Marionette	INFO	Listening on port 46227
+1641214830291	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+1641214852972	Marionette	INFO	Stopped listening on port 46227
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 15064, IPC I/O Parent] WARNING: FileDescriptorSet destroyed with unconsumed descriptors: file /PROJECT/firefox-93.0+linuxmint1+uma/ipc/chromium/src/chrome/common/file_descriptor_set_posix.cc:19
+1641214853909	geckodriver	INFO	Listening on 127.0.0.1:37389
+1641214854915	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofiletGqZAl"
+1641214856882	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiletGqZAl/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 154: TypeError: date is undefined
+1641214858892	Marionette	INFO	Listening on port 36881
+1641214858962	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1641215088220	geckodriver	INFO	Listening on 127.0.0.1:49321
+1641215089219	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofilecaIMP1"
+1641215090763	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilecaIMP1/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 154: TypeError: date is undefined
+1641215092825	Marionette	INFO	Listening on port 34847
+1641215092862	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+1641215117036	Marionette	INFO	Stopped listening on port 34847
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+[Parent 16770, IPC I/O Parent] WARNING: FileDescriptorSet destroyed with unconsumed descriptors: file /PROJECT/firefox-93.0+linuxmint1+uma/ipc/chromium/src/chrome/common/file_descriptor_set_posix.cc:19
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1641215118004	geckodriver	INFO	Listening on 127.0.0.1:56521
+1641215119012	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileLta7zP"
+1641215120962	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is RU
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileLta7zP/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 154: TypeError: date is undefined
+1641215123153	Marionette	INFO	Listening on port 34117
+1641215123251	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/watch.js, line 10: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 996: unreachable code after return statement
+JavaScript warning: https://kopilkaclub.ru/js/functions.js?122, line 588: unreachable code after return statement
+1641215225304	Marionette	INFO	Stopped listening on port 34117
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1641215225633	geckodriver	INFO	Listening on 127.0.0.1:38059
