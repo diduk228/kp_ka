@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 import random
-from selenium.webdriver.firefox.service import Service
-from bs4 import BeautifulSoup
 import json
 import time
 import requests
 import re
 import urllib3
+from threading import *
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def get_sms(id, count = 0, mod = 0):
     url1 = 'https://onlinesim.ru/api/getState.php?apikey=96ad76d72c908e689ce8712bc4b6fc2b'
@@ -25,8 +24,8 @@ def get_sms(id, count = 0, mod = 0):
     try:
         if (todos[0]['response'] == 'TZ_NUM_WAIT'):
             time.sleep(10)
-            if(count == 20):
-                exit()
+            if(count == 10):
+                return str(0), str(0)
             cod,passwor = get_sms(id, count=count+1, mod=mod)
         if (todos[0]['response'] == 'TZ_NUM_ANSWER' and mod == 1):
             count = 0
@@ -36,8 +35,8 @@ def get_sms(id, count = 0, mod = 0):
                 passwor = str(todos[0]['msg'][1]['msg'])
             except:
                 time.sleep(10)
-                if (count == 20):
-                    exit()
+                if (count == 10):
+                    return str(0), str(0)
                 cod,passwor = get_sms(id, count=count + 1, mod=mod)
         if (todos[0]['response'] == 'TZ_NUM_ANSWER' and mod == 0):
             print(todos[0]['msg'][0]['msg'])
@@ -173,7 +172,7 @@ class Kopilka_reg:
         otces_btn.send_keys(otc)
     def data_btn(self):
         data_btn = self.driver.find_element_by_xpath("//input[@name='inp[dob]']")
-        dates = '0701' + str(random.randint(1987, 2004))
+        dates = '1901' + str(random.randint(1987, 2004))
         data_btn.send_keys(dates)
     def phone_btn(self,number):
         phone_btn = self.driver.find_element_by_xpath("//input[@name='inp[phone]']")
@@ -243,6 +242,7 @@ class Kopilka_reg:
         next_btn.click()
     def next_3_btn(self):
         next_btn = self.driver.find_element_by_xpath('/html/body/div[3]/div/div/div[1]/div/form/div[5]/div/input')
+        next_btn.click()
     def confirm_cod_btn(self,cod):
         finil = self.driver.find_element_by_xpath("//*[@id='confirmCode']")
         finil.send_keys(cod)
@@ -296,7 +296,6 @@ class Kopilka_reg:
             bad_card = self.driver.find_element_by_xpath('/html/body/div[3]/div/div/div[1]/div/form/div[4]/p/span')  # Ошибка если карта уже используется
             if (bad_card.text == 'номер карты :'):
                 print('Номер карты не уникальный')
-                self.driver.quit()
                 self.reg(rep=1, number=for_text, id=id, card=0)
             else:
                 print('Номер карты уникальный')
@@ -304,26 +303,20 @@ class Kopilka_reg:
             print('Номер карты уникальный')
         try:
             bad_phone = self.driver.find_element_by_xpath( '/html/body/div[3]/div/div/div[1]/div/form/div[4]/p/span')  # Ошибка если номер уже используется
-            print('Номер телефона не уникальный')
-            if (bad_phone.text == 'телефон : '):
-                self.driver.quit()
+            if (bad_phone.text == 'телефон :'):
+                print('Номер телефона не уникальный')
                 self.reg(rep=0, card=card)
         except:
             print('Номер телефона уникальный')
 
         cod, passwor = get_sms(id, mod=0)
+        if(cod == '0' and passwor == '0'):
+            self.reg()
         self.confirm_cod_btn(cod=cod)
         self.next_3_btn()
         cod, passwor = get_sms(id, mod=1)
         save_acc(number, passwor)
-        self.driver.quit()
         self.reg()
-
-
-
-
-
-
 
 class Kopilka_aut:
     def __init__(self):
@@ -397,6 +390,19 @@ if(mod == 1):
     start = Kopilka_aut()
     start.aut()
 if(mod == 0):
-    start = Kopilka_reg()
-    start.reg()
+
+    start1 = Kopilka_reg()
+    start2 = Kopilka_reg()
+    start3 = Kopilka_reg()
+    st1 = Thread(target=start1.reg)
+    st2 = Thread(target=start2.reg)
+    st3 = Thread(target=start3.reg)
+    st1.start()
+    time.sleep(3)
+    st2.start()
+    time.sleep(3)
+    st3.start()
+    st1.join()
+    st2.join()
+    st3.join()
 
